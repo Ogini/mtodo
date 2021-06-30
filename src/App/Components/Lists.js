@@ -13,6 +13,10 @@ class Lists extends React.Component {
         this.props.setActive(setActive)
     }
 
+    handleButtonClickClear = () => {
+        this.props.clearList(this.props.activeList);
+    }
+
     render() {
         return (
             <div>
@@ -34,6 +38,7 @@ class Lists extends React.Component {
                     : null
                 }
                 </ul>
+                <button onClick={this.handleButtonClickClear}>Clear {this.props.activeList === 'test' ? 'bob' : 'test'}</button>
             </div>
         )
     }
